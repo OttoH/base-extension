@@ -1,0 +1,8 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="16" height="16" rx="3" fill="#C4A484"/>
+  <circle cx="4" cy="4" r="1" fill="white"/>
+  <circle cx="7" cy="3" r="1" fill="white"/>
+  <circle cx="10" cy="4" r="1" fill="white"/>
+  <circle cx="8" cy="7" r="2.5" fill="white"/>
+  <text x="8" y="13" text-anchor="middle" font-family="Arial, sans-serif" font-size="3" font-weight="bold" fill="#8B6F3F">SV</text>
+</svg>

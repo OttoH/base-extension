@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "SOULVET Content Extractor",
+  "version": "1.0.0",
+  "description": "Extract and analyze pet-related content from web pages with SOULVET's professional tools",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "SOULVET Content Extractor",
+    "default_icon": {
+      "16": "icon16.svg",
+      "48": "icon48.svg",
+      "128": "icon128.svg"
+    }
+  },
+  "icons": {
+    "16": "icon16.svg",
+    "48": "icon48.svg",
+    "128": "icon128.svg"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["*.js", "*.css"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
