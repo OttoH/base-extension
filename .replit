@@ -19,10 +19,6 @@ args = "Build Extension"
 task = "workflow.run"
 args = "Build Production"
 
-[[workflows.workflow.tasks]]
-task = "workflow.run"
-args = "Development Build"
-
 [[workflows.workflow]]
 name = "Build Extension"
 author = "agent"
@@ -38,14 +34,6 @@ author = "agent"
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "npx webpack --mode=production"
-
-[[workflows.workflow]]
-name = "Development Build"
-author = "agent"
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "npx webpack --mode=development --watch"
 
 [[ports]]
 localPort = 5000

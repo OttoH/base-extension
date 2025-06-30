@@ -60,11 +60,16 @@ module.exports = {
           to: 'popup.html'
         },
         {
-          from: 'public',
-          to: 'public',
-          globOptions: {
-            ignore: ['**/index.html']
-          }
+          from: 'public/icon16.svg',
+          to: 'icon16.svg'
+        },
+        {
+          from: 'public/icon48.svg',
+          to: 'icon48.svg'
+        },
+        {
+          from: 'public/icon128.svg',
+          to: 'icon128.svg'
         }
       ]
     })

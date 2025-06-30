@@ -4,6 +4,8 @@
   "description": "A professional browser extension designed for the pet industry, enabling veterinary professionals, pet care providers, and animal enthusiasts to extract and analyze pet-related content from web pages with ease.",
   "main": "tailwind.config.js",
   "scripts": {
+    "build": "node ./scripts/build.js",
+    "dev": "node ./scripts/dev.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
