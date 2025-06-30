@@ -1,18 +1,38 @@
 import React, { useState, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
-import { Button } from './components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './components/ui/card';
-import { Badge } from './components/ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from './components/ui/tabs';
+import { ThemeProvider } from '@mui/material/styles';
+import { CssBaseline, Box, Card, CardContent, CardHeader, Button, Chip, Tabs, Tab, Typography, Paper } from '@mui/material';
 import { ExtractedContent } from './components/ExtractedContent';
 import { SoulvetLogo } from './components/SoulvetLogo';
+import { soulvetTheme } from './theme/muiTheme';
 import { ExtractedData, ContentType } from './types';
 import './globals.css';
+
+interface TabPanelProps {
+  children?: React.ReactNode;
+  index: number;
+  value: number;
+}
+
+const TabPanel: React.FC<TabPanelProps> = ({ children, value, index, ...other }) => {
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
+      {...other}
+    >
+      {value === index && <Box sx={{ p: 2 }}>{children}</Box>}
+    </div>
+  );
+};
 
 const Popup: React.FC = () => {
   const [extractedData, setExtractedData] = useState<ExtractedData | null>(null);
   const [isExtracting, setIsExtracting] = useState(false);
   const [currentUrl, setCurrentUrl] = useState<string>('');
+  const [tabValue, setTabValue] = useState(0);
 
   useEffect(() => {
     // Get current tab URL
@@ -127,97 +147,116 @@ const Popup: React.FC = () => {
     chrome.storage.local.remove(['extractedData']);
   };
 
+  const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
+    setTabValue(newValue);
+  };
+
   return (
-    <div className="w-96 min-h-[500px] bg-soulvet-cream">
-      <Card className="border-soulvet-brown/20">
-        <CardHeader className="bg-soulvet-primary text-white">
-          <div className="flex items-center gap-3">
-            <SoulvetLogo size={32} />
-            <div>
-              <CardTitle className="text-lg">SOULVET</CardTitle>
-              <CardDescription className="text-soulvet-cream/80">
-                Content Extractor
-              </CardDescription>
-            </div>
-          </div>
-        </CardHeader>
-        
-        <CardContent className="p-4 space-y-4">
-          <div className="space-y-2">
-            <p className="text-sm text-soulvet-brown/70">Current Page:</p>
-            <p className="text-xs font-mono bg-soulvet-light p-2 rounded break-all">
-              {currentUrl || 'Loading...'}
-            </p>
-          </div>
+    <ThemeProvider theme={soulvetTheme}>
+      <CssBaseline />
+      <Box className="extension-popup">
+        <Card>
+          <CardHeader 
+            sx={{ 
+              backgroundColor: 'primary.main', 
+              color: 'primary.contrastText',
+              py: 2
+            }}
+          >
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+              <SoulvetLogo size={32} />
+              <Box>
+                <Typography variant="h1" sx={{ color: 'inherit' }}>SOULVET</Typography>
+                <Typography variant="body2" sx={{ color: 'inherit', opacity: 0.8 }}>
+                  Content Extractor
+                </Typography>
+              </Box>
+            </Box>
+          </CardHeader>
+          
+          <CardContent sx={{ p: 2 }}>
+            <Box sx={{ mb: 2 }}>
+              <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+                Current Page:
+              </Typography>
+              <Paper sx={{ p: 1, backgroundColor: 'secondary.light', fontSize: '0.6875rem', fontFamily: 'monospace', wordBreak: 'break-all' }}>
+                {currentUrl || 'Loading...'}
+              </Paper>
+            </Box>
 
-          <div className="flex gap-2">
-            <Button 
-              onClick={handleExtractContent}
-              disabled={isExtracting}
-              className="flex-1 bg-soulvet-accent hover:bg-soulvet-accent/90"
-            >
-              {isExtracting ? 'Extracting...' : 'Extract Content'}
-            </Button>
-            
-            {extractedData && (
+            <Box sx={{ display: 'flex', gap: 1, mb: 2 }}>
               <Button 
-                onClick={handleClearData}
-                variant="outline"
-                className="border-soulvet-brown/30 text-soulvet-brown hover:bg-soulvet-light"
+                onClick={handleExtractContent}
+                disabled={isExtracting}
+                variant="contained"
+                color="primary"
+                sx={{ flex: 1 }}
               >
-                Clear
+                {isExtracting ? 'Extracting...' : 'Extract Content'}
               </Button>
-            )}
-          </div>
+              
+              {extractedData && (
+                <Button 
+                  onClick={handleClearData}
+                  variant="outlined"
+                  color="secondary"
+                >
+                  Clear
+                </Button>
+              )}
+            </Box>
 
-          {extractedData && (
-            <Tabs defaultValue="overview" className="mt-4">
-              <TabsList className="grid w-full grid-cols-3 bg-soulvet-light">
-                <TabsTrigger value="overview" className="text-xs">Overview</TabsTrigger>
-                <TabsTrigger value="content" className="text-xs">Content</TabsTrigger>
-                <TabsTrigger value="metadata" className="text-xs">Meta</TabsTrigger>
-              </TabsList>
-              
-              <TabsContent value="overview" className="mt-4 space-y-3">
-                <div className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm font-medium">Headings Found:</span>
-                    <Badge variant="secondary">{extractedData.headings.length}</Badge>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm font-medium">Pet Content:</span>
-                    <Badge variant="secondary" className="bg-soulvet-accent/10 text-soulvet-accent">
-                      {extractedData.petRelatedContent.length}
-                    </Badge>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm font-medium">Extracted:</span>
-                    <span className="text-xs text-soulvet-brown/60">
-                      {new Date(extractedData.extractedAt).toLocaleTimeString()}
-                    </span>
-                  </div>
-                </div>
-              </TabsContent>
-              
-              <TabsContent value="content" className="mt-4">
-                <ExtractedContent data={extractedData} />
-              </TabsContent>
-              
-              <TabsContent value="metadata" className="mt-4">
-                <div className="space-y-2 max-h-60 overflow-y-auto">
-                  {Object.entries(extractedData.metadata).map(([key, value]) => (
-                    <div key={key} className="text-xs border-b border-soulvet-brown/10 pb-1">
-                      <div className="font-medium text-soulvet-brown">{key}:</div>
-                      <div className="text-soulvet-brown/70 break-words">{value}</div>
-                    </div>
-                  ))}
-                </div>
-              </TabsContent>
-            </Tabs>
-          )}
-        </CardContent>
-      </Card>
-    </div>
+            {extractedData && (
+              <Box>
+                <Tabs value={tabValue} onChange={handleTabChange}>
+                  <Tab label="Overview" />
+                  <Tab label="Content" />
+                  <Tab label="Meta" />
+                </Tabs>
+                
+                <TabPanel value={tabValue} index={0}>
+                  <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <Typography variant="body2">Headings Found:</Typography>
+                      <Chip label={extractedData.headings.length} size="small" />
+                    </Box>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <Typography variant="body2">Pet Content:</Typography>
+                      <Chip label={extractedData.petRelatedContent.length} size="small" color="primary" />
+                    </Box>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <Typography variant="body2">Extracted:</Typography>
+                      <Typography variant="caption" color="text.secondary">
+                        {new Date(extractedData.extractedAt).toLocaleTimeString()}
+                      </Typography>
+                    </Box>
+                  </Box>
+                </TabPanel>
+                
+                <TabPanel value={tabValue} index={1}>
+                  <ExtractedContent data={extractedData} />
+                </TabPanel>
+                
+                <TabPanel value={tabValue} index={2}>
+                  <Box sx={{ maxHeight: 240, overflowY: 'auto' }}>
+                    {Object.entries(extractedData.metadata).map(([key, value]) => (
+                      <Box key={key} sx={{ borderBottom: '1px solid', borderColor: 'divider', pb: 1, mb: 1 }}>
+                        <Typography variant="caption" sx={{ fontWeight: 'bold', color: 'text.secondary' }}>
+                          {key}:
+                        </Typography>
+                        <Typography variant="caption" sx={{ display: 'block', wordBreak: 'break-words', color: 'text.secondary' }}>
+                          {value}
+                        </Typography>
+                      </Box>
+                    ))}
+                  </Box>
+                </TabPanel>
+              </Box>
+            )}
+          </CardContent>
+        </Card>
+      </Box>
+    </ThemeProvider>
   );
 };
 

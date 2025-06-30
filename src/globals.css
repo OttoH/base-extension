@@ -1,34 +1,23 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  /* SOULVET Color Palette - Warm Earth Tones */
-  --soulvet-primary: #C4A484;
-  --soulvet-secondary: #A68A6A;
-  --soulvet-accent: #8B6F3F;
-  --soulvet-brown: #6B5B3F;
-  --soulvet-dark: #4A3D2A;
-  --soulvet-light: #E8DDD0;
-  --soulvet-cream: #F5F2ED;
-  --soulvet-warm: #D4B896;
+/* Global styles for MUI extension */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #FAF8F5;
+  color: #3A3A3A;
 }
 
-/* Base styles */
 * {
   box-sizing: border-box;
 }
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: var(--soulvet-cream);
-  color: var(--soulvet-dark);
-  margin: 0;
-  padding: 0;
+/* Extension popup specific styles */
+.extension-popup {
+  width: 400px;
+  min-height: 500px;
+  background: #FAF8F5;
 }
 
 /* Custom scrollbar */
@@ -37,47 +26,17 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--soulvet-light);
+  background: #E8DDD0;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--soulvet-brown);
+  background: #6B5B3F;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--soulvet-accent);
-}
-
-/* Utility classes for SOULVET theme */
-.text-soulvet-primary { color: var(--soulvet-primary); }
-.text-soulvet-secondary { color: var(--soulvet-secondary); }
-.text-soulvet-accent { color: var(--soulvet-accent); }
-.text-soulvet-brown { color: var(--soulvet-brown); }
-.text-soulvet-dark { color: var(--soulvet-dark); }
-
-.bg-soulvet-primary { background-color: var(--soulvet-primary); }
-.bg-soulvet-secondary { background-color: var(--soulvet-secondary); }
-.bg-soulvet-accent { background-color: var(--soulvet-accent); }
-.bg-soulvet-brown { background-color: var(--soulvet-brown); }
-.bg-soulvet-dark { background-color: var(--soulvet-dark); }
-.bg-soulvet-light { background-color: var(--soulvet-light); }
-.bg-soulvet-cream { background-color: var(--soulvet-cream); }
-.bg-soulvet-warm { background-color: var(--soulvet-warm); }
-
-.border-soulvet-primary { border-color: var(--soulvet-primary); }
-.border-soulvet-brown { border-color: var(--soulvet-brown); }
-.border-soulvet-accent { border-color: var(--soulvet-accent); }
-
-/* Hover states */
-.hover\:bg-soulvet-primary\/90:hover { background-color: rgba(196, 164, 132, 0.9); }
-.hover\:bg-soulvet-accent\/90:hover { background-color: rgba(139, 111, 63, 0.9); }
-.hover\:bg-soulvet-light:hover { background-color: var(--soulvet-light); }
-
-/* Focus states */
-.focus-visible\:ring-soulvet-primary:focus-visible { 
-  --tw-ring-color: var(--soulvet-primary);
+  background: #8B6F3F;
 }
 
 /* Animation for paw prints */
@@ -90,144 +49,10 @@ body {
   animation: pawPrint 2s ease-in-out infinite;
 }
 
-/* Custom button variants */
-.btn-soulvet {
-  background-color: var(--soulvet-primary);
-  color: white;
-  border: none;
-  border-radius: 6px;
-  padding: 8px 16px;
-  font-weight: 500;
-  transition: all 0.2s ease;
-}
-
-.btn-soulvet:hover {
-  background-color: var(--soulvet-accent);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(139, 111, 63, 0.2);
-}
-
-.btn-soulvet:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 4px rgba(139, 111, 63, 0.2);
-}
-
-/* Card enhancements */
-.card-soulvet {
-  background: white;
-  border: 1px solid rgba(107, 91, 63, 0.1);
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(139, 111, 63, 0.1);
-  transition: all 0.2s ease;
-}
-
-.card-soulvet:hover {
-  box-shadow: 0 4px 12px rgba(139, 111, 63, 0.15);
-  transform: translateY(-1px);
-}
-
-/* Badge enhancements */
-.badge-soulvet {
-  background-color: var(--soulvet-light);
-  color: var(--soulvet-brown);
-  border: 1px solid rgba(107, 91, 63, 0.2);
-  border-radius: 12px;
-  padding: 2px 8px;
-  font-size: 11px;
-  font-weight: 500;
-}
-
-/* Loading spinner */
-.spinner-soulvet {
-  border: 2px solid var(--soulvet-light);
-  border-top: 2px solid var(--soulvet-primary);
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* Typography */
-.heading-soulvet {
-  color: var(--soulvet-brown);
-  font-weight: 600;
-  line-height: 1.2;
-}
-
-.text-soulvet {
-  color: var(--soulvet-dark);
-  line-height: 1.5;
-}
-
-.text-muted-soulvet {
-  color: rgba(107, 91, 63, 0.7);
-}
-
-/* Special paw print pattern background */
-.bg-paw-pattern {
-  background-image: 
-    radial-gradient(circle at 20% 20%, rgba(196, 164, 132, 0.1) 1px, transparent 1px),
-    radial-gradient(circle at 40% 60%, rgba(196, 164, 132, 0.1) 1px, transparent 1px),
-    radial-gradient(circle at 80% 40%, rgba(196, 164, 132, 0.1) 1px, transparent 1px);
-  background-size: 40px 40px, 60px 60px, 50px 50px;
-}
-
-/* Extension popup specific styles */
-.extension-popup {
-  width: 384px;
-  min-height: 500px;
-  max-height: 600px;
-  font-size: 14px;
-}
-
-.extension-popup .card {
-  box-shadow: none;
-  border: 1px solid rgba(107, 91, 63, 0.1);
-}
-
-.extension-popup .scrollable {
-  max-height: 300px;
-  overflow-y: auto;
-}
-
-/* Responsive text sizes for extension */
-.extension-popup h1 { font-size: 18px; }
-.extension-popup h2 { font-size: 16px; }
-.extension-popup h3 { font-size: 14px; }
-.extension-popup p { font-size: 12px; }
-.extension-popup .text-xs { font-size: 10px; }
-.extension-popup .text-sm { font-size: 11px; }
-
 /* Highlight styles for extracted content */
 mark.highlight-soulvet {
   background-color: rgba(196, 164, 132, 0.2);
-  color: var(--soulvet-accent);
+  color: #8B6F3F;
   padding: 1px 2px;
   border-radius: 2px;
-}
-
-/* Error states */
-.error-soulvet {
-  color: #dc2626;
-  background-color: #fef2f2;
-  border-color: #fecaca;
-}
-
-/* Success states */
-.success-soulvet {
-  color: #059669;
-  background-color: #f0fdf4;
-  border-color: #bbf7d0;
-}
-
-/* Warning states */
-.warning-soulvet {
-  color: var(--soulvet-accent);
-  background-color: var(--soulvet-light);
-  border-color: var(--soulvet-primary);
 }

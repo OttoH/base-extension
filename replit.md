@@ -10,9 +10,9 @@ The extension features a warm earth-tone design palette (#C4A484) that reflects 
 
 ### Frontend Architecture
 - **Framework**: React 19 with TypeScript for type safety and modern development practices
-- **Styling**: Tailwind CSS with custom SOULVET color palette for consistent branding
+- **Styling**: Material-UI (MUI) with custom SOULVET theme for consistent branding
 - **Build System**: Webpack 5 with TypeScript compilation and CSS processing
-- **UI Components**: Custom component library with reusable Button, Card, Badge, and Tabs components
+- **UI Components**: Material-UI component library with custom SOULVET theme overrides
 
 ### Backend Architecture
 - **Extension Structure**: Chrome Manifest V3 architecture with separate contexts:
@@ -40,10 +40,10 @@ The extension features a warm earth-tone design palette (#C4A484) that reflects 
 - **Type Classification**: Automated content categorization based on medical, product, and other indicators
 
 ### User Interface Components
-- **ExtractedContent**: Displays categorized content with badges and truncation
+- **ExtractedContent**: Displays categorized content with MUI Chips and Cards
 - **SoulvetLogo**: Custom SVG logo component with paw print design
-- **UI Library**: Complete set of styled components (Button, Card, Badge, Tabs)
-- **Responsive Design**: Optimized for extension popup constraints
+- **MUI Theme**: Custom SOULVET theme with warm earth-tone color palette
+- **Responsive Design**: Optimized for extension popup constraints using MUI breakpoints
 
 ### Utility Functions
 - **Text Processing**: Sanitization, truncation, and formatting utilities
@@ -70,17 +70,17 @@ The extension features a warm earth-tone design palette (#C4A484) that reflects 
 ### Core Dependencies
 - **React 19**: Modern React with concurrent features
 - **TypeScript 5.8**: Type safety and development tooling
-- **Tailwind CSS 4.1**: Utility-first styling framework
+- **Material-UI (MUI)**: Component library with theme system
+- **Emotion**: CSS-in-JS styling for MUI components
 - **Chrome Types**: Browser extension API type definitions
 
 ### Build Dependencies
 - **Webpack 5**: Module bundling and asset processing
-- **PostCSS**: CSS processing and autoprefixing
 - **Copy Webpack Plugin**: Static asset copying
 - **TS Loader**: TypeScript compilation in Webpack
 
 ### Utility Libraries
-- **clsx & tailwind-merge**: CSS class management
+- **clsx**: CSS class management utility
 - **Chrome Extension APIs**: Browser-specific functionality
 
 ## Deployment Strategy
@@ -103,22 +103,22 @@ The extension features a warm earth-tone design palette (#C4A484) that reflects 
 - Build outputs: popup.js, content.js, background.js
 
 ## Recent Changes
-- June 30, 2025: Complete browser extension build successfully compiled
-- June 30, 2025: Fixed all TypeScript compilation errors
-- June 30, 2025: Implemented functional tabs component with context API
-- June 30, 2025: Created comprehensive README documentation for users and developers
+- June 30, 2025: Complete migration from Tailwind CSS to Material-UI (MUI)
+- June 30, 2025: Created custom SOULVET theme with warm earth-tone color palette
+- June 30, 2025: Updated all UI components to use MUI (Cards, Chips, Buttons, Tabs)
+- June 30, 2025: Removed Tailwind CSS dependencies and configuration files
+- June 30, 2025: Extension builds successfully with MUI integration
 - June 30, 2025: Fixed package.json JSON syntax error and icon path issues
 - June 30, 2025: Updated webpack configuration to properly copy SVG icons to dist root
-- June 30, 2025: Extension ready for Chrome/Edge developer mode testing
 
 ## Project Status
 
 **Current State**: ✅ READY FOR TESTING
-- Extension builds successfully without errors
+- Extension builds successfully with Material-UI integration
 - All TypeScript compilation issues resolved
-- Complete UI with SOULVET branding implemented
+- Complete UI with SOULVET branding using custom MUI theme
 - Content extraction engine functional
-- Comprehensive documentation completed
+- Migrated from Tailwind CSS to Material-UI for modern component library
 
 **Available for Testing**: Load the `dist/` folder as an unpacked extension in Chrome/Edge developer mode
 

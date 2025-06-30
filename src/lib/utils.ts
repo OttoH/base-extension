@@ -1,8 +1,7 @@
 import { type ClassValue, clsx } from 'clsx';
-import { twMerge } from 'tailwind-merge';
 
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
+  return clsx(inputs);
 }
 
 export function formatDate(date: string | Date): string {
@@ -61,7 +60,7 @@ export function highlightKeywords(text: string, keywords: string[]): string {
     const regex = new RegExp(`\\b${keyword}\\b`, 'gi');
     highlightedText = highlightedText.replace(
       regex, 
-      `<mark class="bg-soulvet-accent/20 text-soulvet-accent">${keyword}</mark>`
+      `<mark class="highlight-soulvet">${keyword}</mark>`
     );
   });
   
