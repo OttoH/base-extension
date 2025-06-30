@@ -59,6 +59,10 @@ module.exports = {
           to: 'popup.html'
         },
         {
+          from: 'src/test-popup.html',
+          to: 'test-popup.html'
+        },
+        {
           from: 'public/icon16.svg',
           to: 'icon16.svg'
         },

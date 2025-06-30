@@ -295,9 +295,80 @@ const Popup: React.FC = () => {
   );
 };
 
-// Initialize the popup
+// Error boundary component
+class ErrorBoundary extends React.Component<{children: React.ReactNode}, {hasError: boolean, error?: Error}> {
+  constructor(props: {children: React.ReactNode}) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError(error: Error) {
+    return { hasError: true, error };
+  }
+
+  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
+    console.error('Extension error:', error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div style={{ 
+          padding: '20px', 
+          textAlign: 'center', 
+          backgroundColor: '#FAF8F5',
+          width: '400px',
+          minHeight: '500px',
+          fontFamily: 'Arial, sans-serif'
+        }}>
+          <h2 style={{ color: '#6B5B3F' }}>SOULVET Extension Error</h2>
+          <p style={{ color: '#8B6F3F' }}>Something went wrong. Please try reloading the extension.</p>
+          <pre style={{ 
+            fontSize: '12px', 
+            color: '#A68A6A',
+            textAlign: 'left',
+            background: '#E8DDD0',
+            padding: '10px',
+            borderRadius: '4px',
+            marginTop: '20px'
+          }}>
+            {this.state.error?.message || 'Unknown error'}
+          </pre>
+        </div>
+      );
+    }
+
+    return this.props.children;
+  }
+}
+
+// Initialize the popup with error handling
 const container = document.getElementById('root');
 if (container) {
-  const root = createRoot(container);
-  root.render(<Popup />);
+  try {
+    const root = createRoot(container);
+    root.render(
+      <ErrorBoundary>
+        <Popup />
+      </ErrorBoundary>
+    );
+    console.log('SOULVET Extension popup initialized successfully');
+  } catch (error) {
+    console.error('Failed to initialize popup:', error);
+    container.innerHTML = `
+      <div style="padding: 20px; text-align: center; background: #FAF8F5; width: 400px; min-height: 500px; font-family: Arial, sans-serif;">
+        <h2 style="color: #6B5B3F;">SOULVET Extension</h2>
+        <p style="color: #8B6F3F;">Failed to load. Please reload the extension.</p>
+        <p style="font-size: 12px; color: #A68A6A;">${error}</p>
+      </div>
+    `;
+  }
+} else {
+  console.error('Root container not found');
+  document.body.innerHTML = `
+    <div style="padding: 20px; text-align: center; background: #FAF8F5; width: 400px; min-height: 500px; font-family: Arial, sans-serif;">
+      <h2 style="color: #6B5B3F;">SOULVET Extension</h2>
+      <p style="color: #8B6F3F;">Root container not found. Please reload the extension.</p>
+    </div>
+  `;
 }

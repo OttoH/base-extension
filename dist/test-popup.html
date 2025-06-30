@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOULVET Test</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background-color: #C4A484;
+      color: white;
+      width: 400px;
+      min-height: 500px;
+      box-sizing: border-box;
+    }
+    .test-content {
+      text-align: center;
+      padding: 50px 20px;
+    }
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 30px;
+      color: #6B5B3F;
+    }
+    .test-button {
+      background: white;
+      color: #C4A484;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin: 10px;
+    }
+    .test-button:hover {
+      background: #f5f5f5;
+    }
+  </style>
+</head>
+<body>
+  <div class="test-content">
+    <div class="logo">SOULVET</div>
+    <h2>Extension Test Page</h2>
+    <p>This is a simple test to verify the extension popup is working.</p>
+    <button class="test-button" onclick="testFunction()">Test Button</button>
+    <div id="test-output"></div>
+  </div>
+  
+  <script>
+    function testFunction() {
+      document.getElementById('test-output').innerHTML = '<p>✓ JavaScript is working!</p>';
+      console.log('SOULVET test function executed');
+    }
+    
+    // Test Chrome extension APIs
+    if (typeof chrome !== 'undefined' && chrome.storage) {
+      console.log('Chrome extension APIs available');
+      document.getElementById('test-output').innerHTML += '<p>✓ Chrome APIs available</p>';
+    } else {
+      console.log('Chrome extension APIs not available');
+      document.getElementById('test-output').innerHTML += '<p>✗ Chrome APIs not available</p>';
+    }
+    
+    console.log('SOULVET test popup loaded');
+  </script>
+</body>
+</html>

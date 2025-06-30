@@ -4,10 +4,105 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SOULVET Content Extractor</title>
-  <link rel="stylesheet" href="globals.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background-color: #FAF8F5;
+      color: #3A3A3A;
+      width: 400px;
+      min-height: 500px;
+    }
+    
+    * {
+      box-sizing: border-box;
+    }
+    
+    .extension-popup {
+      width: 400px;
+      min-height: 500px;
+      background: #FAF8F5;
+    }
+    
+    .loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 500px;
+      font-size: 16px;
+      color: #6B5B3F;
+    }
+    
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: #E8DDD0;
+      border-radius: 3px;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: #6B5B3F;
+      border-radius: 3px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: #8B6F3F;
+    }
+    
+    /* Animation for paw prints */
+    @keyframes pawPrint {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    
+    .animate-paw {
+      animation: pawPrint 2s ease-in-out infinite;
+    }
+    
+    /* Highlight styles for extracted content */
+    mark.highlight-soulvet {
+      background-color: rgba(196, 164, 132, 0.2);
+      color: #8B6F3F;
+      padding: 1px 2px;
+      border-radius: 2px;
+    }
+  </style>
 </head>
 <body>
-  <div id="root"></div>
-  <script src="popup.js"></script>
+  <div id="root">
+    <div class="loading">Loading SOULVET...</div>
+  </div>
+  
+  <script>
+    console.log('SOULVET popup HTML loaded');
+    
+    // Check if Chrome APIs are available
+    if (typeof chrome !== 'undefined') {
+      console.log('Chrome APIs available');
+    } else {
+      console.error('Chrome APIs not available');
+    }
+    
+    // Add error handling for script loading
+    window.addEventListener('error', function(e) {
+      console.error('Script error:', e.error);
+      document.getElementById('root').innerHTML = `
+        <div style="padding: 20px; text-align: center; background: #FAF8F5; width: 400px; min-height: 500px;">
+          <h2 style="color: #6B5B3F;">SOULVET Extension Error</h2>
+          <p style="color: #8B6F3F;">Failed to load extension scripts.</p>
+          <p style="font-size: 12px; color: #A68A6A;">${e.error?.message || 'Unknown error'}</p>
+        </div>
+      `;
+    });
+  </script>
+  
+  <script src="vendors.js" onerror="console.error('Failed to load vendors.js')"></script>
+  <script src="popup.js" onerror="console.error('Failed to load popup.js')"></script>
 </body>
 </html>
