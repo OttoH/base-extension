@@ -201,41 +201,41 @@ const Popup: React.FC = () => {
       <CssBaseline />
       <Box className="extension-popup">
         <Card>
-          <CardHeader 
-            title={
-              <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-                  <SoulvetLogo size={32} />
-                  <Box>
-                    <Typography variant="h1" sx={{ color: 'inherit' }}>SOULVET</Typography>
-                    <Typography variant="body2" sx={{ color: 'inherit', opacity: 0.8 }}>
-                      Content Extractor
-                    </Typography>
-                  </Box>
-                </Box>
-                <Button
-                  onClick={handleLogout}
-                  variant="outlined"
-                  size="small"
-                  sx={{
-                    color: 'inherit',
-                    borderColor: 'rgba(255, 255, 255, 0.5)',
-                    '&:hover': {
-                      borderColor: 'rgba(255, 255, 255, 0.8)',
-                      backgroundColor: 'rgba(255, 255, 255, 0.1)'
-                    }
-                  }}
-                >
-                  登出
-                </Button>
-              </Box>
-            }
+          <Box 
             sx={{ 
               backgroundColor: 'primary.main', 
               color: 'primary.contrastText',
-              py: 2
+              p: 2,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between'
             }}
-          />
+          >
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+              <SoulvetLogo size={32} />
+              <Box>
+                <Typography variant="h6" sx={{ color: 'inherit', fontWeight: 'bold' }}>SOULVET</Typography>
+                <Typography variant="body2" sx={{ color: 'inherit', opacity: 0.8 }}>
+                  Content Extractor
+                </Typography>
+              </Box>
+            </Box>
+            <Button
+              onClick={handleLogout}
+              variant="outlined"
+              size="small"
+              sx={{
+                color: 'inherit',
+                borderColor: 'rgba(255, 255, 255, 0.5)',
+                '&:hover': {
+                  borderColor: 'rgba(255, 255, 255, 0.8)',
+                  backgroundColor: 'rgba(255, 255, 255, 0.1)'
+                }
+              }}
+            >
+              登出
+            </Button>
+          </Box>
           
           <CardContent sx={{ p: 2 }}>
             <Box sx={{ mb: 2 }}>
