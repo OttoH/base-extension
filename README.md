@@ -41,7 +41,7 @@ A professional browser extension designed for the pet industry, enabling veterin
 
 3. **Build the Extension**
    ```bash
-   npm run build
+   npx webpack --mode=production
    ```
 
 4. **Load in Browser**
@@ -375,24 +375,30 @@ npm run test:e2e
 
 2. **Development Build**
    ```bash
-   npm run dev     # Watch mode for development
+   npx webpack --mode=development --watch     # Watch mode for development
    ```
 
 3. **Production Build**
    ```bash
-   npm run build   # Optimized production build
+   npx webpack --mode=production   # Optimized production build
    ```
 
-### Development Scripts
+### Development Commands
 
-```json
-{
-  "build": "webpack --mode=production",
-  "dev": "webpack --mode=development --watch",
-  "test": "jest",
-  "lint": "eslint src/**/*.{ts,tsx}",
-  "type-check": "tsc --noEmit"
-}
+Since package.json cannot be modified in this environment, use these direct commands:
+
+```bash
+# Production build
+npx webpack --mode=production
+
+# Development build with watch mode
+npx webpack --mode=development --watch
+
+# Type checking
+npx tsc --noEmit
+
+# Install dependencies
+npm install
 ```
 
 ### File Watching
