@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from '@mui/material/styles';
-import { CssBaseline, Box, Card, CardContent, CardHeader, Button, Chip, Tabs, Tab, Typography, Paper } from '@mui/material';
+import { CssBaseline, Box, Card, CardContent, CardHeader, Button, Chip, Tabs, Tab, Typography, Paper, TextField, FormControl, InputLabel, Select, MenuItem } from '@mui/material';
 import { ExtractedContent } from './components/ExtractedContent';
 import { LoginPage } from './components/LoginPage';
 import { SoulvetLogo } from './components/SoulvetLogo';
@@ -288,6 +288,93 @@ const Popup: React.FC = () => {
                 </TabPanel>
               </Box>
             )}
+
+            {/* Pet Medical Form */}
+            <Box sx={{ mt: 3, pt: 2, borderTop: '1px solid', borderColor: 'divider' }}>
+              <Typography variant="h6" sx={{ mb: 2, color: 'primary.main' }}>
+                派工 (Task Assignment)
+              </Typography>
+              
+              <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+                <TextField
+                  label="設備 AE Title"
+                  variant="outlined"
+                  size="small"
+                  fullWidth
+                />
+                
+                <Box sx={{ display: 'flex', gap: 2 }}>
+                  <FormControl size="small" sx={{ flex: 1 }}>
+                    <InputLabel>選擇儀器...</InputLabel>
+                    <Select
+                      label="選擇儀器..."
+                      defaultValue=""
+                    >
+                      <MenuItem value="ct">CT Scanner</MenuItem>
+                      <MenuItem value="xray">X-Ray Machine</MenuItem>
+                      <MenuItem value="ultrasound">Ultrasound</MenuItem>
+                      <MenuItem value="mri">MRI</MenuItem>
+                    </Select>
+                  </FormControl>
+                  
+                  <FormControl size="small" sx={{ flex: 1 }}>
+                    <InputLabel>名字或病歷號碼</InputLabel>
+                    <Select
+                      label="名字或病歷號碼"
+                      defaultValue=""
+                    >
+                      <MenuItem value="name">按名字</MenuItem>
+                      <MenuItem value="record">按病歷號碼</MenuItem>
+                    </Select>
+                  </FormControl>
+                </Box>
+                
+                <Box sx={{ display: 'flex', gap: 2 }}>
+                  <TextField
+                    label="影像類型"
+                    variant="outlined"
+                    size="small"
+                    sx={{ flex: 1 }}
+                  />
+                  
+                  <TextField
+                    label="病歷資料"
+                    variant="outlined"
+                    size="small"
+                    sx={{ flex: 1 }}
+                  />
+                </Box>
+                
+                <Box sx={{ display: 'flex', gap: 2 }}>
+                  <TextField
+                    label="說明"
+                    variant="outlined"
+                    size="small"
+                    multiline
+                    rows={2}
+                    sx={{ flex: 2 }}
+                  />
+                  
+                  <TextField
+                    label="預約日期"
+                    type="date"
+                    variant="outlined"
+                    size="small"
+                    InputLabelProps={{ shrink: true }}
+                    sx={{ flex: 1 }}
+                  />
+                </Box>
+                
+                <Box sx={{ display: 'flex', gap: 1, justifyContent: 'flex-end' }}>
+                  <Button variant="outlined" size="small">
+                    取消
+                  </Button>
+                  <Button variant="contained" size="small" color="primary">
+                    提交
+                  </Button>
+                </Box>
+              </Box>
+            </Box>
           </CardContent>
         </Card>
       </Box>

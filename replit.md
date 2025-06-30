@@ -110,6 +110,7 @@ The extension features a warm earth-tone design palette (#C4A484) that reflects 
 - June 30, 2025: Created custom SOULVET theme with warm earth-tone color palette
 - June 30, 2025: Updated all UI components to use MUI (Cards, Chips, Buttons, Tabs)
 - June 30, 2025: Extension builds successfully with login flow integration
+- June 30, 2025: Added medical task assignment form below Extract content section with Chinese labels
 
 ## Project Status
 
