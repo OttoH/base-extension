@@ -164,6 +164,16 @@ const Popup: React.FC = () => {
     setIsLoggedIn(true);
   };
 
+  const handleLogout = () => {
+    // Clear login state from Chrome storage
+    chrome.storage.local.remove(['isLoggedIn']);
+    // Reset local state
+    setIsLoggedIn(false);
+    // Clear any cached data
+    setExtractedData(null);
+    chrome.storage.local.remove(['extractedData']);
+  };
+
   // Show loading state while checking authentication
   if (isCheckingAuth) {
     return (
@@ -198,14 +208,31 @@ const Popup: React.FC = () => {
               py: 2
             }}
           >
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-              <SoulvetLogo size={32} />
-              <Box>
-                <Typography variant="h1" sx={{ color: 'inherit' }}>SOULVET</Typography>
-                <Typography variant="body2" sx={{ color: 'inherit', opacity: 0.8 }}>
-                  Content Extractor
-                </Typography>
+            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+                <SoulvetLogo size={32} />
+                <Box>
+                  <Typography variant="h1" sx={{ color: 'inherit' }}>SOULVET</Typography>
+                  <Typography variant="body2" sx={{ color: 'inherit', opacity: 0.8 }}>
+                    Content Extractor
+                  </Typography>
+                </Box>
               </Box>
+              <Button
+                onClick={handleLogout}
+                variant="outlined"
+                size="small"
+                sx={{
+                  color: 'inherit',
+                  borderColor: 'rgba(255, 255, 255, 0.5)',
+                  '&:hover': {
+                    borderColor: 'rgba(255, 255, 255, 0.8)',
+                    backgroundColor: 'rgba(255, 255, 255, 0.1)'
+                  }
+                }}
+              >
+                登出
+              </Button>
             </Box>
           </CardHeader>
           

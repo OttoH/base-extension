@@ -111,6 +111,7 @@ The extension features a warm earth-tone design palette (#C4A484) that reflects 
 - June 30, 2025: Updated all UI components to use MUI (Cards, Chips, Buttons, Tabs)
 - June 30, 2025: Extension builds successfully with login flow integration
 - June 30, 2025: Added medical task assignment form below Extract content section with Chinese labels
+- June 30, 2025: Added logout button to header with functionality to return to login page
 
 ## Project Status
 
