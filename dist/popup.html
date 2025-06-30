@@ -27,6 +27,15 @@
       background: #FAF8F5;
     }
     
+    .loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 500px;
+      font-size: 16px;
+      color: #6B5B3F;
+    }
+    
     /* Custom scrollbar */
     ::-webkit-scrollbar {
       width: 6px;
@@ -66,8 +75,34 @@
   </style>
 </head>
 <body>
-  <div id="root"></div>
-  <script src="vendors.js"></script>
-  <script src="popup.js"></script>
+  <div id="root">
+    <div class="loading">Loading SOULVET...</div>
+  </div>
+  
+  <script>
+    console.log('SOULVET popup HTML loaded');
+    
+    // Check if Chrome APIs are available
+    if (typeof chrome !== 'undefined') {
+      console.log('Chrome APIs available');
+    } else {
+      console.error('Chrome APIs not available');
+    }
+    
+    // Add error handling for script loading
+    window.addEventListener('error', function(e) {
+      console.error('Script error:', e.error);
+      document.getElementById('root').innerHTML = `
+        <div style="padding: 20px; text-align: center; background: #FAF8F5; width: 400px; min-height: 500px;">
+          <h2 style="color: #6B5B3F;">SOULVET Extension Error</h2>
+          <p style="color: #8B6F3F;">Failed to load extension scripts.</p>
+          <p style="font-size: 12px; color: #A68A6A;">${e.error?.message || 'Unknown error'}</p>
+        </div>
+      `;
+    });
+  </script>
+  
+  <script src="vendors.js" onerror="console.error('Failed to load vendors.js')"></script>
+  <script src="popup.js" onerror="console.error('Failed to load popup.js')"></script>
 </body>
 </html>

@@ -23,7 +23,7 @@
     }
   ],
   "action": {
-    "default_popup": "test-popup.html",
+    "default_popup": "popup.html",
     "default_title": "SOULVET Content Extractor",
     "default_icon": {
       "16": "icon16.svg",
