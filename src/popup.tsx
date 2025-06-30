@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from '@mui/material/styles';
 import { CssBaseline, Box, Card, CardContent, CardHeader, Button, Chip, Tabs, Tab, Typography, Paper } from '@mui/material';
 import { ExtractedContent } from './components/ExtractedContent';
+import { LoginPage } from './components/LoginPage';
 import { SoulvetLogo } from './components/SoulvetLogo';
 import { soulvetTheme } from './theme/muiTheme';
 import { ExtractedData, ContentType } from './types';
@@ -33,8 +34,16 @@ const Popup: React.FC = () => {
   const [isExtracting, setIsExtracting] = useState(false);
   const [currentUrl, setCurrentUrl] = useState<string>('');
   const [tabValue, setTabValue] = useState(0);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isCheckingAuth, setIsCheckingAuth] = useState(true);
 
   useEffect(() => {
+    // Check login status first
+    chrome.storage.local.get(['isLoggedIn'], (result) => {
+      setIsLoggedIn(!!result.isLoggedIn);
+      setIsCheckingAuth(false);
+    });
+
     // Get current tab URL
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
       if (tabs[0]?.url) {
@@ -150,6 +159,32 @@ const Popup: React.FC = () => {
   const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
     setTabValue(newValue);
   };
+
+  const handleLoginSuccess = () => {
+    setIsLoggedIn(true);
+  };
+
+  // Show loading state while checking authentication
+  if (isCheckingAuth) {
+    return (
+      <ThemeProvider theme={soulvetTheme}>
+        <CssBaseline />
+        <Box className="extension-popup" sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: 500 }}>
+          <Typography>Loading...</Typography>
+        </Box>
+      </ThemeProvider>
+    );
+  }
+
+  // Show login page if not logged in
+  if (!isLoggedIn) {
+    return (
+      <ThemeProvider theme={soulvetTheme}>
+        <CssBaseline />
+        <LoginPage onLoginSuccess={handleLoginSuccess} />
+      </ThemeProvider>
+    );
+  }
 
   return (
     <ThemeProvider theme={soulvetTheme}>
