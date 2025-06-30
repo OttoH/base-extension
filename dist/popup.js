@@ -1,2 +1,203 @@
-(()=>{"use strict";var e,t,n,r={4542:(e,t,n)=>{var r=n(4848),o=n(6540),a=n(5338),i=n(6446),s=n(6858),l=n(8868),c=n(2412),d=n(2208),A=n(5124),x=n(8516),p=n(9565),h=n(1238),m=n(3840),u=n(4951),g=n(7862);const b=({data:e})=>{const t=e=>{switch(e){case"medical":return{color:"error"};case"product":return{color:"info"};case"review":return{color:"success"};case"article":return{color:"secondary"};default:return{color:"primary"}}},n=(e,t=150)=>e.length<=t?e:e.substring(0,t)+"...";return(0,r.jsxs)(s.A,{sx:{maxHeight:384,overflowY:"auto"},children:[e.headings.length>0&&(0,r.jsxs)(c.A,{sx:{mb:2},children:[(0,r.jsx)(d.A,{sx:{pb:1},children:(0,r.jsxs)(A.A,{variant:"h3",children:["Page Headings (",e.headings.length,")"]})}),(0,r.jsx)(x.A,{sx:{pt:0},children:(0,r.jsxs)(s.A,{sx:{display:"flex",flexDirection:"column",gap:1},children:[e.headings.slice(0,5).map((e,t)=>(0,r.jsxs)(s.A,{sx:{display:"flex",alignItems:"center",gap:1},children:[(0,r.jsx)(g.A,{label:`H${e.level}`,size:"small",variant:"outlined",sx:{fontSize:"0.625rem",height:"auto",py:.25}}),(0,r.jsx)(A.A,{variant:"caption",sx:{flex:1,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"},children:e.text})]},t)),e.headings.length>5&&(0,r.jsxs)(A.A,{variant:"caption",color:"text.secondary",children:["...and ",e.headings.length-5," more"]})]})})]}),e.petRelatedContent.length>0?(0,r.jsxs)(s.A,{children:[(0,r.jsxs)(A.A,{variant:"h3",sx:{mb:2},children:["Pet-Related Content (",e.petRelatedContent.length,")"]}),(0,r.jsx)(s.A,{sx:{display:"flex",flexDirection:"column",gap:2},children:e.petRelatedContent.map((e,o)=>(0,r.jsx)(c.A,{children:(0,r.jsxs)(x.A,{sx:{p:1.5},children:[(0,r.jsxs)(s.A,{sx:{display:"flex",justifyContent:"space-between",alignItems:"center",mb:1},children:[(0,r.jsx)(g.A,{label:e.type,size:"small",...t(e.type),sx:{fontSize:"0.625rem",height:"auto",py:.25}}),(0,r.jsx)(g.A,{label:e.tagName,size:"small",color:"secondary",sx:{fontSize:"0.625rem",height:"auto",py:.25}})]}),(0,r.jsx)(A.A,{variant:"caption",sx:{display:"block",mb:1,lineHeight:1.4},children:n(e.text)}),(0,r.jsxs)(s.A,{sx:{display:"flex",flexWrap:"wrap",gap:.5},children:[e.keywords.slice(0,4).map((e,t)=>(0,r.jsx)(g.A,{label:e,size:"small",color:"primary",variant:"outlined",sx:{fontSize:"0.5625rem",height:"auto",py:.125}},t)),e.keywords.length>4&&(0,r.jsx)(g.A,{label:"+"+(e.keywords.length-4),size:"small",color:"primary",variant:"outlined",sx:{fontSize:"0.5625rem",height:"auto",py:.125}})]})]})},e.id))})]}):(0,r.jsx)(c.A,{children:(0,r.jsx)(x.A,{sx:{p:3,textAlign:"center"},children:(0,r.jsxs)(s.A,{sx:{color:"text.secondary"},children:[(0,r.jsx)("svg",{style:{width:32,height:32,margin:"0 auto 8px",display:"block"},fill:"none",stroke:"currentColor",viewBox:"0 0 24 24",children:(0,r.jsx)("path",{strokeLinecap:"round",strokeLinejoin:"round",strokeWidth:2,d:"M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-2.34 0-4.29-1.009-5.824-2.562M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"})}),(0,r.jsx)(A.A,{variant:"body2",children:"No pet-related content found"}),(0,r.jsx)(A.A,{variant:"caption",sx:{mt:.5,display:"block"},children:"Try visiting a pet, veterinary, or animal-related website"})]})})})]})},f=({size:e=24,className:t=""})=>(0,r.jsxs)("svg",{width:e,height:e,viewBox:"0 0 24 24",fill:"none",xmlns:"http://www.w3.org/2000/svg",className:t,children:[(0,r.jsx)("circle",{cx:"6",cy:"6",r:"2",fill:"currentColor"}),(0,r.jsx)("circle",{cx:"12",cy:"4.5",r:"2",fill:"currentColor"}),(0,r.jsx)("circle",{cx:"18",cy:"6",r:"2",fill:"currentColor"}),(0,r.jsx)("circle",{cx:"12",cy:"12",r:"4",fill:"currentColor"}),(0,r.jsx)("text",{x:"12",y:"20",textAnchor:"middle",fontSize:"4",fontWeight:"bold",fill:"currentColor",fontFamily:"Arial, sans-serif",children:"SV"})]}),y="#C4A484",C="#6B5B3F",v="#4A3D2A",j="#E8DDD0",w=(0,n(7796).A)({palette:{primary:{main:y,light:"#D4B896",dark:"#A68A6A",contrastText:"#ffffff"},secondary:{main:C,light:j,dark:v,contrastText:"#ffffff"},background:{default:"#F5F2ED",paper:"#ffffff"},text:{primary:v,secondary:C},divider:j},typography:{fontFamily:["Roboto","-apple-system","BlinkMacSystemFont",'"Segoe UI"','"Helvetica Neue"',"Arial","sans-serif"].join(","),h1:{fontSize:"1.125rem",fontWeight:600,color:C},h2:{fontSize:"1rem",fontWeight:600,color:C},h3:{fontSize:"0.875rem",fontWeight:600,color:C},body1:{fontSize:"0.75rem",lineHeight:1.5,color:v},body2:{fontSize:"0.6875rem",lineHeight:1.5,color:v},caption:{fontSize:"0.625rem",color:C}},components:{MuiButton:{styleOverrides:{root:{borderRadius:6,textTransform:"none",fontWeight:500,fontSize:"0.75rem",padding:"8px 16px",transition:"all 0.2s ease","&:hover":{transform:"translateY(-1px)",boxShadow:"0 4px 8px rgba(139, 111, 63, 0.2)"},"&:active":{transform:"translateY(0)",boxShadow:"0 2px 4px rgba(139, 111, 63, 0.2)"}}}},MuiCard:{styleOverrides:{root:{borderRadius:8,border:"1px solid rgba(107, 91, 63, 0.1)",boxShadow:"0 2px 4px rgba(139, 111, 63, 0.1)",transition:"all 0.2s ease","&:hover":{boxShadow:"0 4px 12px rgba(139, 111, 63, 0.15)",transform:"translateY(-1px)"}}}},MuiChip:{styleOverrides:{root:{backgroundColor:j,color:C,border:"1px solid rgba(107, 91, 63, 0.2)",fontSize:"0.6875rem",fontWeight:500,height:"auto",padding:"2px 8px","& .MuiChip-label":{padding:"0 4px"}}}},MuiTab:{styleOverrides:{root:{textTransform:"none",fontWeight:500,fontSize:"0.75rem",minHeight:40,padding:"8px 12px",color:C,"&.Mui-selected":{color:y}}}},MuiTabs:{styleOverrides:{indicator:{backgroundColor:y}}},MuiTypography:{styleOverrides:{root:{"&.animate-paw":{animation:"pawPrint 2s ease-in-out infinite"}}}}}});var k=n(5072),E=n.n(k),B=n(7825),S=n.n(B),O=n(7659),F=n.n(O),z=n(5056),D=n.n(z),M=n(540),P=n.n(M),T=n(1113),H=n.n(T),I=n(8707),R={};R.styleTagTransform=H(),R.setAttributes=D(),R.insert=F().bind(null,"head"),R.domAPI=S(),R.insertStyleElement=P(),E()(I.A,R),I.A&&I.A.locals&&I.A.locals;const W=({children:e,value:t,index:n,...o})=>(0,r.jsx)("div",{role:"tabpanel",hidden:t!==n,id:`simple-tabpanel-${n}`,"aria-labelledby":`simple-tab-${n}`,...o,children:t===n&&(0,r.jsx)(s.A,{sx:{p:2},children:e})}),N=()=>{const[e,t]=(0,o.useState)(null),[n,a]=(0,o.useState)(!1),[y,C]=(0,o.useState)(""),[v,j]=(0,o.useState)(0);return(0,o.useEffect)(()=>{chrome.tabs.query({active:!0,currentWindow:!0},e=>{e[0]?.url&&C(e[0].url)}),chrome.storage.local.get(["extractedData"],e=>{e.extractedData&&t(e.extractedData)})},[]),(0,r.jsxs)(i.A,{theme:w,children:[(0,r.jsx)(l.Ay,{}),(0,r.jsx)(s.A,{className:"extension-popup",children:(0,r.jsxs)(c.A,{children:[(0,r.jsx)(d.A,{sx:{backgroundColor:"primary.main",color:"primary.contrastText",py:2},children:(0,r.jsxs)(s.A,{sx:{display:"flex",alignItems:"center",gap:2},children:[(0,r.jsx)(f,{size:32}),(0,r.jsxs)(s.A,{children:[(0,r.jsx)(A.A,{variant:"h1",sx:{color:"inherit"},children:"SOULVET"}),(0,r.jsx)(A.A,{variant:"body2",sx:{color:"inherit",opacity:.8},children:"Content Extractor"})]})]})}),(0,r.jsxs)(x.A,{sx:{p:2},children:[(0,r.jsxs)(s.A,{sx:{mb:2},children:[(0,r.jsx)(A.A,{variant:"body2",color:"text.secondary",sx:{mb:1},children:"Current Page:"}),(0,r.jsx)(p.A,{sx:{p:1,backgroundColor:"secondary.light",fontSize:"0.6875rem",fontFamily:"monospace",wordBreak:"break-all"},children:y||"Loading..."})]}),(0,r.jsxs)(s.A,{sx:{display:"flex",gap:1,mb:2},children:[(0,r.jsx)(h.A,{onClick:async()=>{a(!0);try{const[e]=await chrome.tabs.query({active:!0,currentWindow:!0});if(!e.id)throw new Error("No active tab found");const n=await chrome.scripting.executeScript({target:{tabId:e.id},func:()=>(()=>{const e={url:window.location.href,title:document.title,headings:[],petRelatedContent:[],metadata:{},extractedAt:(new Date).toISOString()},t=document.querySelectorAll("h1, h2, h3, h4, h5, h6");e.headings=Array.from(t).map(e=>({level:parseInt(e.tagName.substring(1)),text:e.textContent?.trim()||"",id:e.id||""}));const n=["dog","cat","pet","animal","veterinary","vet","puppy","kitten","breed","health","nutrition","grooming","training","behavior","vaccine","medical","clinic","hospital","care","wellness"],r=document.querySelectorAll("p, div, span, article, section"),o=[];return r.forEach((e,t)=>{const r=e.textContent?.toLowerCase()||"",a=n.filter(e=>r.includes(e));a.length>0&&e.textContent&&e.textContent.trim().length>50&&o.push({id:`pet-content-${t}`,text:e.textContent.trim(),keywords:a,tagName:e.tagName.toLowerCase(),className:e.className||"",type:"pet-related"})}),e.petRelatedContent=o.slice(0,10),document.querySelectorAll("meta").forEach(t=>{const n=t.getAttribute("name")||t.getAttribute("property")||"",r=t.getAttribute("content")||"";n&&r&&(e.metadata[n]=r)}),e})()});if(n[0]?.result){const e=n[0].result;t(e),chrome.storage.local.set({extractedData:e})}}catch(e){console.error("Failed to extract content:",e)}finally{a(!1)}},disabled:n,variant:"contained",color:"primary",sx:{flex:1},children:n?"Extracting...":"Extract Content"}),e&&(0,r.jsx)(h.A,{onClick:()=>{t(null),chrome.storage.local.remove(["extractedData"])},variant:"outlined",color:"secondary",children:"Clear"})]}),e&&(0,r.jsxs)(s.A,{children:[(0,r.jsxs)(m.A,{value:v,onChange:(e,t)=>{j(t)},children:[(0,r.jsx)(u.A,{label:"Overview"}),(0,r.jsx)(u.A,{label:"Content"}),(0,r.jsx)(u.A,{label:"Meta"})]}),(0,r.jsx)(W,{value:v,index:0,children:(0,r.jsxs)(s.A,{sx:{display:"flex",flexDirection:"column",gap:1},children:[(0,r.jsxs)(s.A,{sx:{display:"flex",justifyContent:"space-between",alignItems:"center"},children:[(0,r.jsx)(A.A,{variant:"body2",children:"Headings Found:"}),(0,r.jsx)(g.A,{label:e.headings.length,size:"small"})]}),(0,r.jsxs)(s.A,{sx:{display:"flex",justifyContent:"space-between",alignItems:"center"},children:[(0,r.jsx)(A.A,{variant:"body2",children:"Pet Content:"}),(0,r.jsx)(g.A,{label:e.petRelatedContent.length,size:"small",color:"primary"})]}),(0,r.jsxs)(s.A,{sx:{display:"flex",justifyContent:"space-between",alignItems:"center"},children:[(0,r.jsx)(A.A,{variant:"body2",children:"Extracted:"}),(0,r.jsx)(A.A,{variant:"caption",color:"text.secondary",children:new Date(e.extractedAt).toLocaleTimeString()})]})]})}),(0,r.jsx)(W,{value:v,index:1,children:(0,r.jsx)(b,{data:e})}),(0,r.jsx)(W,{value:v,index:2,children:(0,r.jsx)(s.A,{sx:{maxHeight:240,overflowY:"auto"},children:Object.entries(e.metadata).map(([e,t])=>(0,r.jsxs)(s.A,{sx:{borderBottom:"1px solid",borderColor:"divider",pb:1,mb:1},children:[(0,r.jsxs)(A.A,{variant:"caption",sx:{fontWeight:"bold",color:"text.secondary"},children:[e,":"]}),(0,r.jsx)(A.A,{variant:"caption",sx:{display:"block",wordBreak:"break-words",color:"text.secondary"},children:t})]},e))})})]})]})]})})]})},_=document.getElementById("root");_&&(0,a.createRoot)(_).render((0,r.jsx)(N,{}))},8707:(e,t,n)=>{n.d(t,{A:()=>s});var r=n(1354),o=n.n(r),a=n(6314),i=n.n(a)()(o());i.push([e.id,"/* Global styles for MUI extension */\nbody {\n  margin: 0;\n  padding: 0;\n  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  background-color: #FAF8F5;\n  color: #3A3A3A;\n}\n\n* {\n  box-sizing: border-box;\n}\n\n/* Extension popup specific styles */\n.extension-popup {\n  width: 400px;\n  min-height: 500px;\n  background: #FAF8F5;\n}\n\n/* Custom scrollbar */\n::-webkit-scrollbar {\n  width: 6px;\n}\n\n::-webkit-scrollbar-track {\n  background: #E8DDD0;\n  border-radius: 3px;\n}\n\n::-webkit-scrollbar-thumb {\n  background: #6B5B3F;\n  border-radius: 3px;\n}\n\n::-webkit-scrollbar-thumb:hover {\n  background: #8B6F3F;\n}\n\n/* Animation for paw prints */\n@keyframes pawPrint {\n  0%, 100% { transform: scale(1); }\n  50% { transform: scale(1.1); }\n}\n\n.animate-paw {\n  animation: pawPrint 2s ease-in-out infinite;\n}\n\n/* Highlight styles for extracted content */\nmark.highlight-soulvet {\n  background-color: rgba(196, 164, 132, 0.2);\n  color: #8B6F3F;\n  padding: 1px 2px;\n  border-radius: 2px;\n}","",{version:3,sources:["webpack://./src/globals.css"],names:[],mappings:"AAAA,oCAAoC;AACpC;EACE,SAAS;EACT,UAAU;EACV,uDAAuD;EACvD,mCAAmC;EACnC,kCAAkC;EAClC,yBAAyB;EACzB,cAAc;AAChB;;AAEA;EACE,sBAAsB;AACxB;;AAEA,oCAAoC;AACpC;EACE,YAAY;EACZ,iBAAiB;EACjB,mBAAmB;AACrB;;AAEA,qBAAqB;AACrB;EACE,UAAU;AACZ;;AAEA;EACE,mBAAmB;EACnB,kBAAkB;AACpB;;AAEA;EACE,mBAAmB;EACnB,kBAAkB;AACpB;;AAEA;EACE,mBAAmB;AACrB;;AAEA,6BAA6B;AAC7B;EACE,WAAW,mBAAmB,EAAE;EAChC,MAAM,qBAAqB,EAAE;AAC/B;;AAEA;EACE,2CAA2C;AAC7C;;AAEA,2CAA2C;AAC3C;EACE,0CAA0C;EAC1C,cAAc;EACd,gBAAgB;EAChB,kBAAkB;AACpB",sourcesContent:["/* Global styles for MUI extension */\nbody {\n  margin: 0;\n  padding: 0;\n  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  background-color: #FAF8F5;\n  color: #3A3A3A;\n}\n\n* {\n  box-sizing: border-box;\n}\n\n/* Extension popup specific styles */\n.extension-popup {\n  width: 400px;\n  min-height: 500px;\n  background: #FAF8F5;\n}\n\n/* Custom scrollbar */\n::-webkit-scrollbar {\n  width: 6px;\n}\n\n::-webkit-scrollbar-track {\n  background: #E8DDD0;\n  border-radius: 3px;\n}\n\n::-webkit-scrollbar-thumb {\n  background: #6B5B3F;\n  border-radius: 3px;\n}\n\n::-webkit-scrollbar-thumb:hover {\n  background: #8B6F3F;\n}\n\n/* Animation for paw prints */\n@keyframes pawPrint {\n  0%, 100% { transform: scale(1); }\n  50% { transform: scale(1.1); }\n}\n\n.animate-paw {\n  animation: pawPrint 2s ease-in-out infinite;\n}\n\n/* Highlight styles for extracted content */\nmark.highlight-soulvet {\n  background-color: rgba(196, 164, 132, 0.2);\n  color: #8B6F3F;\n  padding: 1px 2px;\n  border-radius: 2px;\n}"],sourceRoot:""}]);const s=i}},o={};function a(e){var t=o[e];if(void 0!==t)return t.exports;var n=o[e]={id:e,exports:{}};return r[e](n,n.exports,a),n.exports}a.m=r,e=[],a.O=(t,n,r,o)=>{if(!n){var i=1/0;for(d=0;d<e.length;d++){for(var[n,r,o]=e[d],s=!0,l=0;l<n.length;l++)(!1&o||i>=o)&&Object.keys(a.O).every(e=>a.O[e](n[l]))?n.splice(l--,1):(s=!1,o<i&&(i=o));if(s){e.splice(d--,1);var c=r();void 0!==c&&(t=c)}}return t}o=o||0;for(var d=e.length;d>0&&e[d-1][2]>o;d--)e[d]=e[d-1];e[d]=[n,r,o]},a.n=e=>{var t=e&&e.__esModule?()=>e.default:()=>e;return a.d(t,{a:t}),t},n=Object.getPrototypeOf?e=>Object.getPrototypeOf(e):e=>e.__proto__,a.t=function(e,r){if(1&r&&(e=this(e)),8&r)return e;if("object"==typeof e&&e){if(4&r&&e.__esModule)return e;if(16&r&&"function"==typeof e.then)return e}var o=Object.create(null);a.r(o);var i={};t=t||[null,n({}),n([]),n(n)];for(var s=2&r&&e;"object"==typeof s&&!~t.indexOf(s);s=n(s))Object.getOwnPropertyNames(s).forEach(t=>i[t]=()=>e[t]);return i.default=()=>e,a.d(o,i),o},a.d=(e,t)=>{for(var n in t)a.o(t,n)&&!a.o(e,n)&&Object.defineProperty(e,n,{enumerable:!0,get:t[n]})},a.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),a.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},(()=>{var e={887:0};a.O.j=t=>0===e[t];var t=(t,n)=>{var r,o,[i,s,l]=n,c=0;if(i.some(t=>0!==e[t])){for(r in s)a.o(s,r)&&(a.m[r]=s[r]);if(l)var d=l(a)}for(t&&t(n);c<i.length;c++)o=i[c],a.o(e,o)&&e[o]&&e[o][0](),e[o]=0;return a.O(d)},n=self.webpackChunkworkspace=self.webpackChunkworkspace||[];n.forEach(t.bind(null,0)),n.push=t.bind(null,n.push.bind(n))})(),a.nc=void 0;var i=a.O(void 0,[96],()=>a(4542));i=a.O(i)})();
-//# sourceMappingURL=popup.js.map
+"use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || (function () {
+    var ownKeys = function(o) {
+        ownKeys = Object.getOwnPropertyNames || function (o) {
+            var ar = [];
+            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+            return ar;
+        };
+        return ownKeys(o);
+    };
+    return function (mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+        __setModuleDefault(result, mod);
+        return result;
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importStar(require("react"));
+const client_1 = require("react-dom/client");
+const styles_1 = require("@mui/material/styles");
+const material_1 = require("@mui/material");
+const ExtractedContent_1 = require("./components/ExtractedContent");
+const SoulvetLogo_1 = require("./components/SoulvetLogo");
+const muiTheme_1 = require("./theme/muiTheme");
+require("./globals.css");
+const TabPanel = ({ children, value, index, ...other }) => {
+    return (react_1.default.createElement("div", { role: "tabpanel", hidden: value !== index, id: `simple-tabpanel-${index}`, "aria-labelledby": `simple-tab-${index}`, ...other }, value === index && react_1.default.createElement(material_1.Box, { sx: { p: 2 } }, children)));
+};
+const Popup = () => {
+    const [extractedData, setExtractedData] = (0, react_1.useState)(null);
+    const [isExtracting, setIsExtracting] = (0, react_1.useState)(false);
+    const [currentUrl, setCurrentUrl] = (0, react_1.useState)('');
+    const [tabValue, setTabValue] = (0, react_1.useState)(0);
+    (0, react_1.useEffect)(() => {
+        // Get current tab URL
+        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+            if (tabs[0]?.url) {
+                setCurrentUrl(tabs[0].url);
+            }
+        });
+        // Check if we have cached data for this tab
+        chrome.storage.local.get(['extractedData'], (result) => {
+            if (result.extractedData) {
+                setExtractedData(result.extractedData);
+            }
+        });
+    }, []);
+    const handleExtractContent = async () => {
+        setIsExtracting(true);
+        try {
+            const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+            if (!tab.id) {
+                throw new Error('No active tab found');
+            }
+            // Inject and execute content script
+            const results = await chrome.scripting.executeScript({
+                target: { tabId: tab.id },
+                func: () => {
+                    // Content extraction logic that runs in the page context
+                    const extractContentFromPage = () => {
+                        const data = {
+                            url: window.location.href,
+                            title: document.title,
+                            headings: [],
+                            petRelatedContent: [],
+                            metadata: {},
+                            extractedAt: new Date().toISOString()
+                        };
+                        // Extract headings
+                        const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+                        data.headings = Array.from(headings).map(h => ({
+                            level: parseInt(h.tagName.substring(1)),
+                            text: h.textContent?.trim() || '',
+                            id: h.id || ''
+                        }));
+                        // Extract pet-related content (looking for common pet keywords)
+                        const petKeywords = [
+                            'dog', 'cat', 'pet', 'animal', 'veterinary', 'vet', 'puppy', 'kitten',
+                            'breed', 'health', 'nutrition', 'grooming', 'training', 'behavior',
+                            'vaccine', 'medical', 'clinic', 'hospital', 'care', 'wellness'
+                        ];
+                        const textElements = document.querySelectorAll('p, div, span, article, section');
+                        const petContent = [];
+                        textElements.forEach((element, index) => {
+                            const text = element.textContent?.toLowerCase() || '';
+                            const matchedKeywords = petKeywords.filter(keyword => text.includes(keyword));
+                            if (matchedKeywords.length > 0 && element.textContent && element.textContent.trim().length > 50) {
+                                petContent.push({
+                                    id: `pet-content-${index}`,
+                                    text: element.textContent.trim(),
+                                    keywords: matchedKeywords,
+                                    tagName: element.tagName.toLowerCase(),
+                                    className: element.className || '',
+                                    type: 'pet-related'
+                                });
+                            }
+                        });
+                        data.petRelatedContent = petContent.slice(0, 10); // Limit to first 10 matches
+                        // Extract metadata
+                        const metaTags = document.querySelectorAll('meta');
+                        metaTags.forEach(meta => {
+                            const name = meta.getAttribute('name') || meta.getAttribute('property') || '';
+                            const content = meta.getAttribute('content') || '';
+                            if (name && content) {
+                                data.metadata[name] = content;
+                            }
+                        });
+                        return data;
+                    };
+                    return extractContentFromPage();
+                }
+            });
+            if (results[0]?.result) {
+                const data = results[0].result;
+                setExtractedData(data);
+                // Cache the extracted data
+                chrome.storage.local.set({ extractedData: data });
+            }
+        }
+        catch (error) {
+            console.error('Failed to extract content:', error);
+        }
+        finally {
+            setIsExtracting(false);
+        }
+    };
+    const handleClearData = () => {
+        setExtractedData(null);
+        chrome.storage.local.remove(['extractedData']);
+    };
+    const handleTabChange = (event, newValue) => {
+        setTabValue(newValue);
+    };
+    return (react_1.default.createElement(styles_1.ThemeProvider, { theme: muiTheme_1.soulvetTheme },
+        react_1.default.createElement(material_1.CssBaseline, null),
+        react_1.default.createElement(material_1.Box, { className: "extension-popup" },
+            react_1.default.createElement(material_1.Card, null,
+                react_1.default.createElement(material_1.CardHeader, { sx: {
+                        backgroundColor: 'primary.main',
+                        color: 'primary.contrastText',
+                        py: 2
+                    } },
+                    react_1.default.createElement(material_1.Box, { sx: { display: 'flex', alignItems: 'center', gap: 2 } },
+                        react_1.default.createElement(SoulvetLogo_1.SoulvetLogo, { size: 32 }),
+                        react_1.default.createElement(material_1.Box, null,
+                            react_1.default.createElement(material_1.Typography, { variant: "h1", sx: { color: 'inherit' } }, "SOULVET"),
+                            react_1.default.createElement(material_1.Typography, { variant: "body2", sx: { color: 'inherit', opacity: 0.8 } }, "Content Extractor")))),
+                react_1.default.createElement(material_1.CardContent, { sx: { p: 2 } },
+                    react_1.default.createElement(material_1.Box, { sx: { mb: 2 } },
+                        react_1.default.createElement(material_1.Typography, { variant: "body2", color: "text.secondary", sx: { mb: 1 } }, "Current Page:"),
+                        react_1.default.createElement(material_1.Paper, { sx: { p: 1, backgroundColor: 'secondary.light', fontSize: '0.6875rem', fontFamily: 'monospace', wordBreak: 'break-all' } }, currentUrl || 'Loading...')),
+                    react_1.default.createElement(material_1.Box, { sx: { display: 'flex', gap: 1, mb: 2 } },
+                        react_1.default.createElement(material_1.Button, { onClick: handleExtractContent, disabled: isExtracting, variant: "contained", color: "primary", sx: { flex: 1 } }, isExtracting ? 'Extracting...' : 'Extract Content'),
+                        extractedData && (react_1.default.createElement(material_1.Button, { onClick: handleClearData, variant: "outlined", color: "secondary" }, "Clear"))),
+                    extractedData && (react_1.default.createElement(material_1.Box, null,
+                        react_1.default.createElement(material_1.Tabs, { value: tabValue, onChange: handleTabChange },
+                            react_1.default.createElement(material_1.Tab, { label: "Overview" }),
+                            react_1.default.createElement(material_1.Tab, { label: "Content" }),
+                            react_1.default.createElement(material_1.Tab, { label: "Meta" })),
+                        react_1.default.createElement(TabPanel, { value: tabValue, index: 0 },
+                            react_1.default.createElement(material_1.Box, { sx: { display: 'flex', flexDirection: 'column', gap: 1 } },
+                                react_1.default.createElement(material_1.Box, { sx: { display: 'flex', justifyContent: 'space-between', alignItems: 'center' } },
+                                    react_1.default.createElement(material_1.Typography, { variant: "body2" }, "Headings Found:"),
+                                    react_1.default.createElement(material_1.Chip, { label: extractedData.headings.length, size: "small" })),
+                                react_1.default.createElement(material_1.Box, { sx: { display: 'flex', justifyContent: 'space-between', alignItems: 'center' } },
+                                    react_1.default.createElement(material_1.Typography, { variant: "body2" }, "Pet Content:"),
+                                    react_1.default.createElement(material_1.Chip, { label: extractedData.petRelatedContent.length, size: "small", color: "primary" })),
+                                react_1.default.createElement(material_1.Box, { sx: { display: 'flex', justifyContent: 'space-between', alignItems: 'center' } },
+                                    react_1.default.createElement(material_1.Typography, { variant: "body2" }, "Extracted:"),
+                                    react_1.default.createElement(material_1.Typography, { variant: "caption", color: "text.secondary" }, new Date(extractedData.extractedAt).toLocaleTimeString())))),
+                        react_1.default.createElement(TabPanel, { value: tabValue, index: 1 },
+                            react_1.default.createElement(ExtractedContent_1.ExtractedContent, { data: extractedData })),
+                        react_1.default.createElement(TabPanel, { value: tabValue, index: 2 },
+                            react_1.default.createElement(material_1.Box, { sx: { maxHeight: 240, overflowY: 'auto' } }, Object.entries(extractedData.metadata).map(([key, value]) => (react_1.default.createElement(material_1.Box, { key: key, sx: { borderBottom: '1px solid', borderColor: 'divider', pb: 1, mb: 1 } },
+                                react_1.default.createElement(material_1.Typography, { variant: "caption", sx: { fontWeight: 'bold', color: 'text.secondary' } },
+                                    key,
+                                    ":"),
+                                react_1.default.createElement(material_1.Typography, { variant: "caption", sx: { display: 'block', wordBreak: 'break-words', color: 'text.secondary' } }, value)))))))))))));
+};
+// Initialize the popup
+const container = document.getElementById('root');
+if (container) {
+    const root = (0, client_1.createRoot)(container);
+    root.render(react_1.default.createElement(Popup, null));
+}

@@ -103,13 +103,13 @@ The extension features a warm earth-tone design palette (#C4A484) that reflects 
 - Build outputs: popup.js, content.js, background.js
 
 ## Recent Changes
+- June 30, 2025: Fixed build script issues with reliable TypeScript compilation
+- June 30, 2025: Created SOULVET login page matching user design specifications
 - June 30, 2025: Complete migration from Tailwind CSS to Material-UI (MUI)
 - June 30, 2025: Created custom SOULVET theme with warm earth-tone color palette
 - June 30, 2025: Updated all UI components to use MUI (Cards, Chips, Buttons, Tabs)
-- June 30, 2025: Removed Tailwind CSS dependencies and configuration files
-- June 30, 2025: Extension builds successfully with MUI integration
-- June 30, 2025: Fixed package.json JSON syntax error and icon path issues
-- June 30, 2025: Updated webpack configuration to properly copy SVG icons to dist root
+- June 30, 2025: Extension builds successfully with working quick-build.sh script
+- June 30, 2025: Login demo server running on port 5000
 
 ## Project Status
 
