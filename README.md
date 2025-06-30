@@ -41,7 +41,12 @@ A professional browser extension designed for the pet industry, enabling veterin
 
 3. **Build the Extension**
    ```bash
-   npx webpack --mode=production
+   npm run build
+   ```
+   
+   Or use the direct command:
+   ```bash
+   node scripts/build.js
    ```
 
 4. **Load in Browser**
@@ -375,30 +380,43 @@ npm run test:e2e
 
 2. **Development Build**
    ```bash
-   npx webpack --mode=development --watch     # Watch mode for development
+   npm run dev     # Watch mode for development
    ```
 
 3. **Production Build**
    ```bash
-   npx webpack --mode=production   # Optimized production build
+   npm run build   # Optimized production build
    ```
 
-### Development Commands
+### Available Scripts
 
-Since package.json cannot be modified in this environment, use these direct commands:
+The project includes the following npm scripts:
 
+```json
+{
+  "scripts": {
+    "build": "node scripts/build.js",
+    "dev": "node scripts/dev.js",
+    "webpack:build": "npx webpack --mode=production",
+    "webpack:dev": "npx webpack --mode=development --watch",
+    "type-check": "npx tsc --noEmit"
+  }
+}
+```
+
+**Usage:**
 ```bash
-# Production build
-npx webpack --mode=production
+npm run build       # Production build with helper script
+npm run dev         # Development build with watch mode
+npm run type-check  # TypeScript type checking
+```
 
-# Development build with watch mode
-npx webpack --mode=development --watch
-
-# Type checking
-npx tsc --noEmit
-
-# Install dependencies
-npm install
+**Direct Commands:**
+```bash
+node scripts/build.js                    # Production build
+node scripts/dev.js                      # Development with watch
+npx webpack --mode=production            # Direct webpack build
+npx webpack --mode=development --watch   # Direct webpack dev
 ```
 
 ### File Watching
