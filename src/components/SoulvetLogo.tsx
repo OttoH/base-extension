@@ -6,36 +6,19 @@ interface SoulvetLogoProps {
 }
 
 export const SoulvetLogo: React.FC<SoulvetLogoProps> = ({ 
-  size = 24, 
+  size = 120, 
   className = '' 
 }) => {
   return (
-    <svg 
+    <img 
+      src="/soulvet-logo.png" 
+      alt="SOULVET Logo"
       width={size} 
-      height={size} 
-      viewBox="0 0 24 24" 
-      fill="none" 
-      xmlns="http://www.w3.org/2000/svg"
+      height={size * 0.4} 
       className={className}
-    >
-      {/* Paw print design */}
-      <circle cx="6" cy="6" r="2" fill="currentColor" />
-      <circle cx="12" cy="4.5" r="2" fill="currentColor" />
-      <circle cx="18" cy="6" r="2" fill="currentColor" />
-      <circle cx="12" cy="12" r="4" fill="currentColor" />
-      
-      {/* SOULVET text integrated into design */}
-      <text 
-        x="12" 
-        y="20" 
-        textAnchor="middle" 
-        fontSize="4" 
-        fontWeight="bold" 
-        fill="currentColor"
-        fontFamily="Arial, sans-serif"
-      >
-        SV
-      </text>
-    </svg>
+      style={{ 
+        objectFit: 'contain'
+      }}
+    />
   );
 };

@@ -112,6 +112,7 @@ The extension features a warm earth-tone design palette (#C4A484) that reflects 
 - June 30, 2025: Extension builds successfully with login flow integration
 - June 30, 2025: Added medical task assignment form below Extract content section with Chinese labels
 - June 30, 2025: Added logout button to header with functionality to return to login page
+- June 30, 2025: Updated SoulvetLogo component to use custom PNG logo image
 
 ## Project Status
 

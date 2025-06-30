@@ -73,6 +73,10 @@ module.exports = {
         {
           from: 'public/icon128.svg',
           to: 'icon128.svg'
+        },
+        {
+          from: 'public/soulvet-logo.png',
+          to: 'soulvet-logo.png'
         }
       ]
     })
