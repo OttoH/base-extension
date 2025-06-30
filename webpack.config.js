@@ -59,6 +59,10 @@ module.exports = {
           to: 'popup.html'
         },
         {
+          from: 'src/login.html',
+          to: 'login.html'
+        },
+        {
           from: 'public/icon16.svg',
           to: 'icon16.svg'
         },

@@ -19,6 +19,10 @@ args = "Build Extension"
 task = "workflow.run"
 args = "Build Production"
 
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Login Demo Server"
+
 [[workflows.workflow]]
 name = "Build Extension"
 author = "agent"
@@ -34,6 +38,15 @@ author = "agent"
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "npx webpack --mode=production"
+
+[[workflows.workflow]]
+name = "Login Demo Server"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "node src/login-server.js"
+waitForPort = 5000
 
 [[ports]]
 localPort = 5000
